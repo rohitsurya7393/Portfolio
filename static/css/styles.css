@@ -235,51 +235,74 @@ nav a:hover {
     }
 }
 
-/* Projects Section */
-.projects-container {
-    text-align: center;
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
+/* Section Divider to prevent merging of sections */
+.section-divider {
+    height: 50px; /* Adds space between projects and contact */
+    background: transparent;
 }
 
-/* Projects Grid */
+/* Projects Grid - Ensuring Clickable Tiles */
 .project-grid {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 20px;
+    justify-items: center;
     margin-top: 20px;
 }
 
-/* Floating Project Boxes */
+/* Updated Project Card Layout */
 .project-card {
-    background: rgba(255, 255, 255, 0.15);
-    padding: 25px;
-    width: 320px;
+    position: relative;
+    width: 300px;
+    height: 250px; /* Increased height for title space */
     border-radius: 12px;
+    overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(10px);
-    transition: transform 0.3s ease-in-out;
-    text-align: center;
     cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    text-decoration: none; /* Remove underline */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.15);
 }
+
 .project-card:hover {
     transform: translateY(-5px);
 }
 
-/* Clickable Project Titles */
-.project-title {
-    font-size: 22px;
-    font-weight: bold;
-    color: black;
-    text-decoration: none;
-    transition: color 0.3s ease-in-out;
+/* Centered Project Images */
+.project-image {
+    width: 70%;  /* Adjusted image size */
+    height: auto;
+    object-fit: contain;
     display: block;
+    transition: transform 0.3s ease-in-out;
 }
-.project-title:hover {
-    color: #007BFF;
+
+.project-card:hover .project-image {
+    transform: scale(1.05); /* Slight zoom effect on hover */
 }
+
+/* Title Overlay Below Image */
+.project-title-overlay {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.project-title-text {
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+}
+
+
 
 /* Contact Page */
 .contact-container {
@@ -428,6 +451,10 @@ textarea {
     width: 40px;
     height: 40px;
     transition: transform 0.2s ease-in-out;
+}
+
+.social-links img:hover {
+    transform: scale(1.1);
 }
 
 /* Footer */
