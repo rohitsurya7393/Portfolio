@@ -1,0 +1,438 @@
+/* Global Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: #0A192F; /* Dark navy blue background */
+    color: black; /* Ensured text remains black */
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+    scroll-behavior: smooth; /* Added smooth scrolling */
+}
+
+/* Full Page Sections */
+.full-page {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    scroll-snap-align: start;
+    background: url('../images/background.jpg') no-repeat center center/cover;
+    background-size: cover;
+    position: relative;
+}
+
+/* Floating Transparent Box */
+.floating-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+.floating-box:hover {
+    transform: translateY(-5px);
+}
+
+/* Profile Picture Container */
+.profile-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Profile Picture */
+.profile-pic {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 5px solid white;
+    box-shadow: 0 0 20px rgba(100, 255, 218, 0.5);
+}
+
+/* Rotating Circles */
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid rgba(100, 255, 218, 0.7);
+    box-shadow: 0 0 15px rgba(100, 255, 218, 0.5);
+    animation: rotate 6s linear infinite;
+}
+
+/* Outer Circle */
+.circle-outer {
+    width: 260px;
+    height: 260px;
+    animation-duration: 8s;
+}
+
+/* Middle Circle */
+.circle-middle {
+    width: 220px;
+    height: 220px;
+    animation-duration: 6s;
+    animation-direction: reverse;
+}
+
+/* Inner Circle */
+.circle-inner {
+    width: 190px;
+    height: 190px;
+    animation-duration: 4s;
+}
+
+/* Rotation Animation */
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Sticky Navigation Bar (Initially Hidden) */
+.navbar {
+    position: fixed;
+    top: -80px; /* Hide initially */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 900px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    transition: top 0.4s ease-in-out;
+    z-index: 1000;
+}
+
+/* Show navbar when scrolling */
+.navbar.show {
+    top: 10px; /* Moves down to become visible */
+}
+
+/* Navigation Links */
+.navbar a {
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: black;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar a:hover {
+    color: #64FFDA;
+}
+
+/* Smooth Scroll Behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Section Transitions */
+.full-page {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.full-page.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+/* Navigation Links */
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: black;
+    transition: color 0.3s ease-in-out;
+}
+nav a:hover {
+    color: #64FFDA;
+}
+
+/* Scroll Down Arrow */
+.scroll-down {
+    position: absolute;
+    bottom: 20px;
+    font-size: 2rem;
+    color: black;
+    text-decoration: none;
+    transition: transform 0.3s ease-in-out;
+}
+.scroll-down:hover {
+    transform: scale(1.2);
+}
+
+/* Skills Section */
+.skills-container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    max-width: 900px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: auto;
+}
+
+/* Skills Grid */
+.skills-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+/* Skill Box */
+.skill {
+    background: rgba(255, 255, 255, 0.3);
+    padding: 15px 30px;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: black;
+    width: auto;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.skill:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Sub-skills Row */
+.sub-skills {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+    .sub-skills {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+}
+
+/* Projects Section */
+.projects-container {
+    text-align: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Projects Grid */
+.project-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+/* Floating Project Boxes */
+.project-card {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 25px;
+    width: 320px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease-in-out;
+    text-align: center;
+    cursor: pointer;
+}
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Clickable Project Titles */
+.project-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+    display: block;
+}
+.project-title:hover {
+    color: #007BFF;
+}
+
+/* Contact Page */
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 80px; /* Increased gap for better spacing */
+    width: 90%;
+    max-width: 1200px;
+    text-align: left;
+    margin: auto;
+}
+
+
+/* Contact Left */
+.contact-left {
+    flex: 1.3; /* Increased flex so it takes more space */
+    background: rgba(255, 255, 255, 0.15);
+    padding: 40px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease-in-out;
+}
+.contact-left:hover {
+    transform: translateY(-5px);
+}
+
+.contact-left h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: black;
+}
+
+/* Contact-right */
+.contact-right {
+    flex: 0.7; /* Smaller width */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+}
+/* Contact Form */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    width: 100%;
+    color: black;
+}
+
+.form-group {
+    display: flex;
+    gap: 15px;
+}
+.form-group input {
+    flex: 1;
+}
+
+/* Email & Phone Number */
+.email-phone-group {
+    display:flex;
+    gap: 15px;
+}
+.email-phone-group input {
+    flex: 1;
+}
+
+textarea {
+    width: 100%;
+    height: 120px;
+}
+
+/* Form Input Fields */
+.contact-form input, 
+.contact-form textarea {
+    padding: 15px;
+    border-radius: 8px;
+    border: none;
+    background: rgba(255, 255, 255, 0.9);
+    color: black;
+    font-size: 16px;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Send Message Button */
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+    background: #007BFF;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, background 0.3s;
+}
+.submit-btn:hover {
+    transform: translateY(-5px);
+    background: #0056b3;
+}
+
+/* Hire Me Button */
+.hire-me-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #007BFF;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 25px;
+    transition: transform 0.3s ease-in-out, background 0.3s;
+    text-align: center;
+    margin: 10px auto; /* Centering */
+}
+.hire-me-btn:hover {
+    transform: scale(1.1);
+    background: #0056b3;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.info-item img {
+    width: 20px; /* Reduced icon size */
+    height: 20px;
+    transition: transform 0.2s ease-in-out;
+}
+.info-item img:hover {
+    transform: scale(1.1);
+}
+
+
+/* Social Links */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Add spacing */
+}
+
+.social-links img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Footer */
+.footer {
+    margin-top: 20px;
+    font-size: 14px;
+    color: black;
+}

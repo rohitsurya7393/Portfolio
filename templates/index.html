@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surya Venkata Rohit Moganti - Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script defer src="{{ url_for('static', filename='js/script.js') }}"></script>
+</head>
+<body>
+
+    <!-- Sticky Navigation Bar (Initially Hidden) -->
+    <nav class="navbar">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Hero Section (Home) -->
+    <section id="home" class="full-page">
+        <div class="content">
+            <div class="profile-container">
+                <div class="circle circle-middle"></div>
+                <div class="circle circle-inner"></div>
+                <img src="{{ url_for('static', filename='images/profile.jpeg') }}" alt="Profile Picture" class="profile-pic">
+            </div>
+            <h1>Surya Venkata Rohit Moganti</h1>
+            <p>Data Engineer | Machine Learning Enthusiast | AWS Cloud Expert</p>
+            <nav class="hero-nav">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+        <a href="#about" class="scroll-down">▼</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="full-page">
+        <div class="floating-box">
+            <h2>About Me</h2>
+            <p>I am a Data Engineer with expertise in AWS, Big Data, and AI-driven solutions.</p>
+        </div>
+        <a href="#skills" class="scroll-down">▼</a>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="full-page">
+        <div class="skills-container">
+            <h2>My Skills Flowchart</h2>
+            <div class="skills-grid">
+                <div class="sub-skills">
+                    <div class="skill">Python</div>
+                    <div class="skill">SQL</div>
+                </div>
+                <div class="sub-skills">
+                    <div class="skill">Pandas & NumPy</div>
+                    <div class="skill">PySpark</div>
+                    <div class="skill">Snowflake</div>
+                    <div class="skill">ODI 12C</div>
+                </div>
+                <div class="sub-skills">
+                    <div class="skill">Machine Learning</div>
+                    <div class="skill">TensorFlow & PyTorch</div>
+                    <div class="skill">Kafka & Streaming</div>
+                    <div class="skill">ETL Pipelines</div>
+                </div>
+                <div class="sub-skills">
+                    <div class="skill">Big Data (Spark, Hadoop)</div>
+                    <div class="skill">MLOps & Model Deployment</div>
+                    <div class="skill">DevOps (Airflow, Docker, Kubernetes)</div>
+                    <div class="skill">Scalable Data Systems</div>
+                </div>
+            </div>
+        </div>
+        <a href="#projects" class="scroll-down">▼</a>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="full-page">
+        <div class="section-container">
+            <h2>Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <a href="#" class="project-title">Real-time Sentiment Analysis</a>
+                    <p>NLP model deployed on AWS using Kafka & FastAPI.</p>
+                </div>
+                <div class="project-card">
+                    <a href="#" class="project-title">Data Lake & ETL Pipeline</a>
+                    <p>Built an ETL pipeline using Apache Spark & Snowflake.</p>
+                </div>
+                <div class="project-card">
+                    <a href="#" class="project-title">Recommendation System</a>
+                    <p>Developed a recommendation engine using TensorFlow.</p>
+                </div>
+            </div>
+        </div>
+        <a href="#contact" class="scroll-down">▼</a>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="full-page">
+        <div class="contact-container">
+            <div class="contact-left">
+                <h2>Let's Work Together!</h2>
+                <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="first-name" placeholder="Firstname" required>
+                        <input type="text" id="last-name" placeholder="Lastname" required>
+                    </div>
+                    <div class="email-phone-group">
+                        <input type="email" id="email" placeholder="Email address" required>
+                        <input type="tel" id="phone" placeholder="Phone number">
+                    </div>
+                    <textarea id="message" placeholder="Type your message here." required></textarea>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+
+            <div class="contact-right">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <img src="{{ url_for('static', filename='images/phone-blue.png') }}" alt="Phone Icon">
+                        <p>(+1) 716 612 0309</p>
+                    </div>
+                    <div class="info-item">
+                        <img src="{{ url_for('static', filename='images/email-blue.png') }}" alt="Email Icon">
+                        <p>rohitsurya9939@gmail.com</p>
+                    </div>
+                </div>
+
+                <!-- Hire Me Button -->
+                <a href="mailto:rohitsurya9939@gmail.com" class="hire-me-btn">Hire Me</a>
+
+                <!-- Social Links -->
+                <div class="social-links">
+                    <a href="https://github.com/rohithmsv">
+                        <img src="{{ url_for('static', filename='images/github-blue.png') }}" alt="GitHub">
+                    </a>
+                    <a href="https://www.linkedin.com/in/rohit-moganti/">
+                        <img src="{{ url_for('static', filename='images/linkedin-blue.png') }}" alt="LinkedIn">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
