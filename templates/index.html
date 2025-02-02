@@ -78,74 +78,82 @@
         <a href="#projects" class="scroll-down">▼</a>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="full-page">
-        <div class="section-container">
-            <h2>Projects</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <a href="#" class="project-title">Real-time Sentiment Analysis</a>
-                    <p>NLP model deployed on AWS using Kafka & FastAPI.</p>
+  <!-- Projects Section -->
+<section id="projects" class="full-page">
+    <div class="section-container">
+        <h2>Projects</h2>
+        <div class="project-grid">
+            <!-- Project Tiles with Images and Titles -->
+            {% set project_titles = [
+                "AI-Powered Brain Model", "React Web App", "Neural Network Simulation",
+                "Data Visualization Dashboard", "AI Chipset", "Database Management",
+                "Deep Learning Framework", "IoT Network", "Machine Learning Analytics"
+            ] %}
+            
+            {% for i in range(9) %}
+            <a href="{{ url_for('project_page', project_id=i+1) }}" target="_blank" class="project-card">
+                <img src="{{ url_for('static', filename='images/project' ~ (i+1) ~ '.png') }}" alt="{{ project_titles[i] }}" class="project-image">
+                <div class="project-title-overlay">
+                    <span class="project-title-text">{{ project_titles[i] }}</span>
                 </div>
-                <div class="project-card">
-                    <a href="#" class="project-title">Data Lake & ETL Pipeline</a>
-                    <p>Built an ETL pipeline using Apache Spark & Snowflake.</p>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+    <a href="#contact" class="scroll-down">▼</a>
+</section>
+
+
+<!-- Adding spacing to separate the Projects and Contact sections -->
+<div class="section-divider"></div>
+
+<!-- Contact Section -->
+<section id="contact" class="full-page">
+    <div class="contact-container">
+        <div class="contact-left">
+            <h2>Let's Work Together!</h2>
+            <form id="contact-form" class="contact-form">
+                <div class="form-group">
+                    <input type="text" id="first-name" placeholder="Firstname" required>
+                    <input type="text" id="last-name" placeholder="Lastname" required>
                 </div>
-                <div class="project-card">
-                    <a href="#" class="project-title">Recommendation System</a>
-                    <p>Developed a recommendation engine using TensorFlow.</p>
+                <div class="email-phone-group">
+                    <input type="email" id="email" placeholder="Email address" required>
+                    <input type="tel" id="phone" placeholder="Phone number">
                 </div>
+                <textarea id="message" placeholder="Type your message here." required></textarea>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+
+        <div class="contact-right">
+            <div class="contact-info">
+                <div class="info-item">
+                    <img src="{{ url_for('static', filename='images/phone-blue.png') }}" alt="Phone Icon">
+                    <p>(+1) 716 612 0309</p>
+                </div>
+                <div class="info-item">
+                    <img src="{{ url_for('static', filename='images/email-blue.png') }}" alt="Email Icon">
+                    <p>rohitsurya9939@gmail.com</p>
+                </div>
+            </div>
+
+            <!-- Hire Me Button -->
+            <a href="mailto:rohitsurya9939@gmail.com" class="hire-me-btn">Hire Me</a>
+
+            <!-- Social Links -->
+            <div class="social-links">
+                <a href="https://github.com/rohithmsv">
+                    <img src="{{ url_for('static', filename='images/github-blue.png') }}" alt="GitHub">
+                </a>
+                <a href="https://www.linkedin.com/in/rohit-moganti/">
+                    <img src="{{ url_for('static', filename='images/linkedin-blue.png') }}" alt="LinkedIn">
+                </a>
             </div>
         </div>
-        <a href="#contact" class="scroll-down">▼</a>
-    </section>
+    </div>
+</section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="full-page">
-        <div class="contact-container">
-            <div class="contact-left">
-                <h2>Let's Work Together!</h2>
-                <form id="contact-form" class="contact-form">
-                    <div class="form-group">
-                        <input type="text" id="first-name" placeholder="Firstname" required>
-                        <input type="text" id="last-name" placeholder="Lastname" required>
-                    </div>
-                    <div class="email-phone-group">
-                        <input type="email" id="email" placeholder="Email address" required>
-                        <input type="tel" id="phone" placeholder="Phone number">
-                    </div>
-                    <textarea id="message" placeholder="Type your message here." required></textarea>
-                    <button type="submit" class="submit-btn">Send Message</button>
-                </form>
-            </div>
-
-            <div class="contact-right">
-                <div class="contact-info">
-                    <div class="info-item">
-                        <img src="{{ url_for('static', filename='images/phone-blue.png') }}" alt="Phone Icon">
-                        <p>(+1) 716 612 0309</p>
-                    </div>
-                    <div class="info-item">
-                        <img src="{{ url_for('static', filename='images/email-blue.png') }}" alt="Email Icon">
-                        <p>rohitsurya9939@gmail.com</p>
-                    </div>
-                </div>
-
-                <!-- Hire Me Button -->
-                <a href="mailto:rohitsurya9939@gmail.com" class="hire-me-btn">Hire Me</a>
-
-                <!-- Social Links -->
-                <div class="social-links">
-                    <a href="https://github.com/rohithmsv">
-                        <img src="{{ url_for('static', filename='images/github-blue.png') }}" alt="GitHub">
-                    </a>
-                    <a href="https://www.linkedin.com/in/rohit-moganti/">
-                        <img src="{{ url_for('static', filename='images/linkedin-blue.png') }}" alt="LinkedIn">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
 
 </body>
 </html>
